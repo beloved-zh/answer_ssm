@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zh.mapper.UserMapper">
+
+    <select id="login" parameterType="String" resultType="Userbase">
+        select * from userbase
+        where userNo = #{userNo} and password = #{password} and source = '批量导入';
+    </select>
+
+    <select id="findByID" parameterType="String" resultType="Userbase">
+        select * from userbase
+        where userId = #{userId};
+    </select>
+
+    <insert id="addGithubUser" parameterType="Userbase">
+        insert into
+        userbase (userId, userNo, password, userName, userPostbox, headSculpture, source, grade)
+        values (#{userId}, #{userNo}, #{password}, #{userName}, #{userPostbox}, #{headSculpture}, #{source}, #{grade});
+    </insert>
+</mapper>

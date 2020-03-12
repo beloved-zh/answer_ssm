@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zh.mapper.QuestionMapper">
+
+    <resultMap id="QuestionAndCourse" type="Question" >
+        <result property="questionId" column="questionId"/>
+        <result property="questionText" column="questionText"/>
+        <result property="answer_a" column="answer_a"/>
+        <result property="answer_b" column="answer_b"/>
+        <result property="answer_c" column="answer_c"/>
+        <result property="answer_d" column="answer_d"/>
+        <result property="answer" column="answer"/>
+        <association property="course" javaType="Course">
+            <result property="courseId" column="courseId"/>
+            <result property="courseName" column="courseName"/>
+        </association>
+    </resultMap>
+    
+    <select id="RandomQuestion" resultMap="QuestionAndCourse">
+        select c.courseName,q.questionId, q.questionText, q.answer_a, q.answer_b, q.answer_c, q.answer_d, q.answer, q.courseId
+        from course c ,question q
+        where c.courseId = q.courseId
+        and q.courseId in
+        <foreach collection="courses" item="cid" open="("
+                 separator="," close=")">
+            #{cid}
+        </foreach>
+        order by rand() limit #{number}
+    </select>
+
+    <select id="findByQids" resultMap="QuestionAndCourse">
+        select * from question
+        where questionId in
+        <foreach collection="qIds" item="qid" open="("
+                 separator="," close=")">
+            #{qid}
+        </foreach>
+        order by field
+        <foreach collection="qIds" item="qid" open="(questionId,"
+                 separator="," close=")">
+            #{qid}
+        </foreach>
+    </select>
+
+</mapper>
