@@ -79,6 +79,7 @@
             <mvc:mapping path="/**"/>
             <!--放行的请求-->
             <mvc:exclude-mapping path="/github/**"/>
+            <mvc:exclude-mapping path="/gitee/**"/>
             <mvc:exclude-mapping path="/user/login"/>
             <mvc:exclude-mapping path="/getImage"/>
             <!--放行静态资源请求-->

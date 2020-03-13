@@ -8,5 +8,5 @@ public interface UserService {
 
     Userbase login(String userNo, String password);
 
-    Userbase githubUser(Map<String,String> map);
+    Userbase gitUser(Map<String,String> map,String source);
 }

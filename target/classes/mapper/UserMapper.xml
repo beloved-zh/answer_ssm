@@ -15,7 +15,7 @@
         where userId = #{userId};
     </select>
 
-    <insert id="addGithubUser" parameterType="Userbase">
+    <insert id="addGitUser" parameterType="Userbase">
         insert into
         userbase (userId, userNo, password, userName, userPostbox, headSculpture, source, grade)
         values (#{userId}, #{userNo}, #{password}, #{userName}, #{userPostbox}, #{headSculpture}, #{source}, #{grade});

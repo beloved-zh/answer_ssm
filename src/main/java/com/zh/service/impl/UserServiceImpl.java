@@ -20,16 +20,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Userbase githubUser(Map<String, String> map) {
+    public Userbase gitUser(Map<String, String> map,String source) {
 
-        Userbase user = mapper.findByID(map.get("id"));
+        Userbase user = mapper.findByID(source+map.get("id"));
 
         if (user == null) {
-            Userbase userbase = new Userbase(map.get("id"), map.get("login"), null, map.get("login"), map.get("email"), map.get("avatar_url"), "Github", 1);
+            Userbase userbase = new Userbase(source+map.get("id"), map.get("login"), null, map.get("login"), map.get("email"), map.get("avatar_url"), source, 1);
 
-            mapper.addGithubUser(userbase);
+            mapper.addGitUser(userbase);
 
-            user = mapper.findByID(map.get("id"));
+            user = mapper.findByID(source+map.get("id"));
         }
         return user;
     }

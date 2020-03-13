@@ -87,6 +87,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="${pageContext.request.contextPath}/gitee/gotoGiteeLogin">
+                        <img src="${pageContext.request.contextPath}/static/image/logo/gitee.svg">
+                    </a>
+                </li>
+                <li>
                     <a href="${pageContext.request.contextPath}/github/gotoGithubLogin" data-toggle="tooltip" data-placement="right" title="GitHub登录，有几率网络问题，登录失败">
                         <img src="${pageContext.request.contextPath}/static/image/logo/github.png">
                     </a>
