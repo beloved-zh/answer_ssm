@@ -11,5 +11,6 @@ public interface UserMapper {
 
     Userbase findByID(@Param("userId") String userId);
 
-    int addGitUser(Userbase userbase);
+    int addUser(Userbase userbase);
+
 }

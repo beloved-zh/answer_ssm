@@ -323,8 +323,8 @@
                         items = $('.vbox-item[data-gall="' + thisgall + '"]');
                     }
 
-                    thenext = items.eq( items.index(obj) + 1 );
-                    theprev = items.eq( items.index(obj) - 1 );
+                    thenext = items.eq( items.test(obj) + 1 );
+                    theprev = items.eq( items.test(obj) - 1 );
 
                     if (!thenext.length && infinigall === true) {
                       thenext = items.eq(0);
@@ -332,7 +332,7 @@
 
                     // update gall numeration
                     if (items.length >= 1) {
-                      gallIndex = items.index(obj)+1;
+                      gallIndex = items.test(obj)+1;
                       blocknum.html(gallIndex + ' / ' + items.length);
                     } else {
                       gallIndex = 1;
@@ -359,7 +359,7 @@
                       nextok = true;
                     }
 
-                    if (items.index(obj) > 0 || infinigall === true) {
+                    if (items.test(obj) > 0 || infinigall === true) {
                       $('.vbox-prev').css('display', 'block');
                       prevok = true;
                     } else {

@@ -27,9 +27,24 @@ public class UserServiceImpl implements UserService {
         if (user == null) {
             Userbase userbase = new Userbase(source+map.get("id"), map.get("login"), null, map.get("login"), map.get("email"), map.get("avatar_url"), source, 1);
 
-            mapper.addGitUser(userbase);
+            mapper.addUser(userbase);
 
             user = mapper.findByID(source+map.get("id"));
+        }
+        return user;
+    }
+
+    @Override
+    public Userbase qqUser(Map<String, String> map,String source) {
+
+        Userbase user = mapper.findByID(map.get("openid"));
+
+        if (user == null) {
+            Userbase userbase = new Userbase(map.get("openid"), map.get("nickname"), null, map.get("nickname"), null, map.get("figureurl_qq_1"), source, 1);
+
+            mapper.addUser(userbase);
+
+            user = mapper.findByID(map.get("openid"));
         }
         return user;
     }

@@ -82,13 +82,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="${pageContext.request.contextPath}/qq/gotoQQLogin">
                         <img src="${pageContext.request.contextPath}/static/image/logo/QQ.png">
                     </a>
                 </li>
                 <li>
                     <a href="${pageContext.request.contextPath}/gitee/gotoGiteeLogin">
-                        <img src="${pageContext.request.contextPath}/static/image/logo/gitee.svg">
+                        <img style="width: 30px;height: 30px" src="${pageContext.request.contextPath}/static/image/logo/gitee.svg">
                     </a>
                 </li>
                 <li>

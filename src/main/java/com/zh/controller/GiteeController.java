@@ -67,7 +67,7 @@ public class GiteeController {
             }
 
         }
-        return "redirect:/";
+        return "redirect:/index.jsp";
     }
 
 }

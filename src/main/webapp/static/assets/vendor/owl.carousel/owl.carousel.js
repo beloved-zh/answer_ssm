@@ -1398,7 +1398,7 @@
 			this._mergers.splice(position, 0, content.find('[data-merge]').addBack('[data-merge]').attr('data-merge') * 1 || 1);
 		}
 
-		this._items[current] && this.reset(this._items[current].index());
+		this._items[current] && this.reset(this._items[current].test());
 
 		this.invalidate('items');
 

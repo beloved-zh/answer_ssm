@@ -1,5 +1,6 @@
 package com.zh.utils;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -12,6 +13,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
+import org.junit.Test;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -150,4 +152,17 @@ public class HttpClientUtils {
         }
         return map;
     }
+
+
+    public static String getOpenID(String responseStr){
+
+        String json = responseStr.substring(responseStr.indexOf("{"), responseStr.indexOf("}") + 1);
+
+        Map<String, String> map = getMapByJson(json);
+
+        String openid = map.get("openid");
+
+        return openid;
+    }
+
 }

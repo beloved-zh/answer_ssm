@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class GiteeConstant {
 
-    // 这里填写在GitHub上注册应用时候获得 CLIENT ID
+    // 这里填写在Gitee上注册应用时候获得 CLIENT ID
     public static final String  CLIENT_ID="*****";
-    //这里填写在GitHub上注册应用时候获得 CLIENT_SECRET
+    //这里填写在Gitee上注册应用时候获得 CLIENT_SECRET
     public static final String CLIENT_SECRET="*****";
     // 回调路径
     public static final String CALLBACK = "*****";

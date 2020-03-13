@@ -15,9 +15,10 @@
         where userId = #{userId};
     </select>
 
-    <insert id="addGitUser" parameterType="Userbase">
+    <insert id="addUser" parameterType="Userbase">
         insert into
         userbase (userId, userNo, password, userName, userPostbox, headSculpture, source, grade)
         values (#{userId}, #{userNo}, #{password}, #{userName}, #{userPostbox}, #{headSculpture}, #{source}, #{grade});
     </insert>
+
 </mapper>

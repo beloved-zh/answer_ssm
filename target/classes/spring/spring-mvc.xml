@@ -78,13 +78,15 @@
             <!--拦截所有请求-->
             <mvc:mapping path="/**"/>
             <!--放行的请求-->
+            <mvc:exclude-mapping path="/index.jsp"/>
             <mvc:exclude-mapping path="/github/**"/>
             <mvc:exclude-mapping path="/gitee/**"/>
-            <mvc:exclude-mapping path="/user/login"/>
+            <mvc:exclude-mapping path="/qq/**"/>
+            <mvc:exclude-mapping path="/user/login/"/>
             <mvc:exclude-mapping path="/getImage"/>
+            <mvc:exclude-mapping path="/favicon.ico"/>
             <!--放行静态资源请求-->
             <mvc:exclude-mapping path="/static/**"/>
-
             <!--将拦截器注入到ioc容器-->
             <bean class="com.zh.config.LoginInterceptor"/>
         </mvc:interceptor>
