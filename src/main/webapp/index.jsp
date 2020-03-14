@@ -156,7 +156,6 @@
 <script src="${pageContext.request.contextPath}/static/assets/vendor/jquery/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/assets/vendor/php-email-form/validate.js"></script>
 <script src="${pageContext.request.contextPath}/static/assets/vendor/venobox/venobox.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/assets/vendor/counterup/counterup.min.js"></script>
